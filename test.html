@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check your relationship compatibility with our professional HeartMatch. Get meaningful insights about your connection. For entertainment purposes only.">
+    <title>HeartMatch | Professional Relationship Analysis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="shortcut icon" href="favico.jpg" type="image/x-icon">
+    <style>
+        :root {
+            --deep-red: #8B0000;
+            --burgundy: #800020;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #333333;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--deep-red);
+            font-size: 1.8rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--deep-red);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--deep-red);
+        }
+
+        nav a.active {
+            color: var(--deep-red);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--deep-red);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-gray);
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin: 30px auto;
+            flex-grow: 1;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--deep-red);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .fun-notice {
+            background-color: rgba(139, 0, 0, 0.05);
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-style: italic;
+            border-left: 4px solid var(--deep-red);
+        }
+
+        .ad-banner {
+            width: 100%;
+            height: 90px;
+            background-color: var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--dark-gray);
+        }
+
+        input {
+            padding: 12px 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--burgundy);
+            box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.1);
+        }
+
+        .btn {
+            background-color: var(--deep-red);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            padding: 14px 20px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: var(--burgundy);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .result-section {
+            display: none;
+            text-align: center;
+            margin-top: 30px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .result-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+
+        .circle-chart {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .circle-bg {
+            fill: none;
+            stroke: var(--medium-gray);
+            stroke-width: 3.8;
+        }
+
+        .circle {
+            fill: none;
+            stroke: var(--deep-red);
+            stroke-width: 3.8;
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+            transition: stroke-dasharray 1.5s ease;
+        }
+
+        .percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--deep-red);
+        }
+
+        .message {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: rgba(139, 0, 0, 0.05);
+        }
+
+        .social-share {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp {
+            background-color: #25D366;
+        }
+
+        .facebook {
+            background-color: #3b5998;
+        }
+
+        .twitter {
+            background-color: #1DA1F2;
+        }
+
+        .telegram {
+            background-color: #0088cc;
+        }
+
+        .copy-link {
+            background-color: var(--deep-red);
+        }
+
+        .share-text {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+
+        .other-tools {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        .tools-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .tool-card {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .tool-icon {
+            font-size: 2rem;
+            color: var(--deep-red);
+            margin-bottom: 10px;
+        }
+
+        .tool-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .tool-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Share Image Styles */
+        #share-image-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        #share-image {
+            background: linear-gradient(135deg, #8B0000, #800020);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .share-image-title {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .share-image-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .share-image-names {
+            font-size: 2rem;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+
+        .share-image-heart {
+            color: #ffcccc;
+            font-size: 2rem;
+            margin: 0 15px;
+        }
+
+        .share-image-percentage {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 30px 0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .share-image-message {
+            font-size: 1.4rem;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .share-image-footer {
+            margin-top: 30px;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .close-share-image {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .download-btn {
+            background-color: white;
+            color: var(--deep-red);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hidden share image for download (no rounded corners, no download button) */
+        #share-image-download {
+            background: linear-gradient(135deg, #8B0000, #800020);
+            padding: 40px;
+            text-align: center;
+            color: white;
+            width: 500px;
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            z-index: -1;
+        }
+
+        .share-image-download-title {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .share-image-download-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .share-image-download-names {
+            font-size: 2rem;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+
+        .share-image-download-heart {
+            color: #ffcccc;
+            font-size: 2rem;
+            margin: 0 15px;
+        }
+
+        .share-image-download-percentage {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 30px 0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .share-image-download-message {
+            font-size: 1.4rem;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .share-image-download-footer {
+            margin-top: 30px;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* About Page Styles */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-section {
+            margin-bottom: 30px;
+        }
+
+        .about-section h2 {
+            color: var(--deep-red);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .about-section p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .disclaimer-box {
+            background-color: rgba(139, 0, 0, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--deep-red);
+            margin-top: 30px;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-content {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: var(--shadow);
+            position: relative;
+            animation: popupFadeIn 0.3s ease;
+        }
+
+        @keyframes popupFadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-gray);
+        }
+
+        .popup-title {
+            margin-bottom: 20px;
+            color: var(--deep-red);
+            text-align: center;
+        }
+
+        .popup-ad {
+            width: 100%;
+            height: 250px;
+            background-color: var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--deep-red);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            z-index: 1001;
+            display: none;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { bottom: -50px; opacity: 0; }
+            to { bottom: 20px; opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .circle-chart {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .percentage {
+                font-size: 2rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+            }
+
+            nav.show {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                padding-top: 15px;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px 0;
+                border-bottom: 1px solid var(--medium-gray);
+            }
+
+            .social-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+
+            /* Share image mobile adjustments */
+            #share-image {
+                padding: 30px 20px;
+            }
+
+            .share-image-title {
+                font-size: 1.8rem;
+            }
+
+            .share-image-names {
+                font-size: 1.6rem;
+            }
+
+            .share-image-percentage {
+                font-size: 3.2rem;
+            }
+
+            .share-image-message {
+                font-size: 1.2rem;
+            }
+
+            /* Download image mobile adjustments */
+            #share-image-download {
+                padding: 30px 20px;
+                width: 90%;
+            }
+
+            .share-image-download-title {
+                font-size: 1.8rem;
+            }
+
+            .share-image-download-names {
+                font-size: 1.6rem;
+            }
+
+            .share-image-download-percentage {
+                font-size: 3.2rem;
+            }
+
+            .share-image-download-message {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .circle-chart {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .percentage {
+                font-size: 1.8rem;
+            }
+            
+            .social-share {
+                gap: 10px;
+            }
+            
+            .social-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .ad-banner {
+                height: 70px;
+            }
+
+            /* Share image mobile adjustments */
+            #share-image {
+                padding: 25px 15px;
+            }
+
+            .share-image-title {
+                font-size: 1.6rem;
+            }
+
+            .share-image-names {
+                font-size: 1.4rem;
+            }
+
+            .share-image-percentage {
+                font-size: 2.8rem;
+            }
+
+            .share-image-message {
+                font-size: 1.1rem;
+            }
+
+            /* Download image mobile adjustments */
+            #share-image-download {
+                padding: 25px 15px;
+            }
+
+            .share-image-download-title {
+                font-size: 1.6rem;
+            }
+
+            .share-image-download-names {
+                font-size: 1.4rem;
+            }
+
+            .share-image-download-percentage {
+                font-size: 2.8rem;
+            }
+
+            .share-image-download-message {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                padding: 10px;
+                margin: 5px;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            .social-btn {
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        .spark {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: gold;
+            border-radius: 50%;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        @keyframes sparkle {
+            0% { transform: scale(0); opacity: 1; }
+            50% { transform: scale(1); opacity: 0.7; }
+            100% { transform: scale(0); opacity: 0; }
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+        
+        /* Loading indicator */
+        .loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            z-index: 2001;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-heart logo-icon"></i>
+                <span class="logo-text">HeartMatch</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="about">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Home Page -->
+        <div class="page active" id="home-page">
+            <div class="page-title">
+                <h1>Love Compatibility Calculator</h1>
+                <p class="subtitle">Discover the potential of your relationship with our professional analysis tool</p>
+            </div>
+
+            <div class="fun-notice">
+                <i class="fas fa-info-circle"></i> For entertainment purposes only. Results are randomly generated for fun.
+            </div>
+
+            <div class="ad-banner">
+                Adsterra Banner Ad (728x90)
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="name1">Your Name</label>
+                    <input type="text" id="name1" placeholder="Enter your name" maxlength="20">
+                </div>
+                
+                <div class="input-group">
+                    <label for="name2">Partner's Name</label>
+                    <input type="text" id="name2" placeholder="Enter partner's name" maxlength="20">
+                </div>
+                
+                <button class="btn" id="calculate-btn">Check Compatibility</button>
+            </div>
+
+            <div class="ad-banner">
+                Adsterra Rectangle Ad (300x250)
+            </div>
+
+            <div class="result-section" id="result-section">
+                <h2 class="result-title">Compatibility Result</h2>
+                
+                <div class="circle-chart">
+                    <svg viewBox="0 0 36 36">
+                        <path class="circle-bg"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path class="circle" id="result-circle"
+                            stroke-dasharray="0, 100"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                    </svg>
+                    <div class="percentage" id="percentage">0%</div>
+                </div>
+                
+                <div class="message" id="message"></div>
+                
+                <div class="social-share">
+                    <p class="share-text">Share your result:</p>
+                    <div class="social-btn whatsapp" id="whatsapp-share">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="social-btn facebook" id="facebook-share">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="social-btn twitter" id="twitter-share">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="social-btn telegram" id="telegram-share">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <div class="social-btn copy-link" id="copy-link">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <button class="btn download-btn" id="share-image-btn">
+                        <i class="fas fa-image"></i> Share as Image
+                    </button>
+                </div>
+            </div>
+
+            <div class="other-tools">
+                <h3 class="tools-title">Explore Our Other Tools</h3>
+                <div class="tools-grid">
+                    <div class="tool-card" id="pregnancy-tool">
+                        <div class="tool-icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <div class="tool-name">Pregnancy Calculator</div>
+                        <div class="tool-desc">Track your pregnancy journey</div>
+                    </div>
+                    <div class="tool-card" id="name-tool">
+                        <div class="tool-icon">
+                            <i class="fas fa-signature"></i>
+                        </div>
+                        <div class="tool-name">Name Meaning Tool</div>
+                        <div class="tool-desc">Discover the meaning behind names</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div class="page" id="about-page">
+            <div class="page-title">
+                <h1>About HeartMatch</h1>
+                <p class="subtitle">Learn more about our fun compatibility tool</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-section">
+                    <h2>Our Mission</h2>
+                    <p>Welcome to the Love Compatibility Calculator, a fun and entertaining tool designed to bring a smile to your face and spark conversations about relationships.</p>
+                    <p>Our mission is to provide lighthearted entertainment while reminding users that real relationships are built on communication, trust, and mutual respect - not algorithmic calculations.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2>How It Works</h2>
+                    <p>Our HeartMatch uses a playful algorithm that generates compatibility percentages based on the names you enter. The results are randomly generated within certain ranges to create entertaining outcomes.</p>
+                    <p>While we've designed the tool to feel authentic with smooth animations and professional presentation, please remember that these results are purely for entertainment and should not be taken seriously.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2>For Entertainment Only</h2>
+                    <p>We believe in being transparent about the nature of our tool. The HeartMatch is designed for amusement and social sharing, not as a serious relationship assessment.</p>
+                    <p>True compatibility comes from shared values, effective communication, and emotional connection - things that can't be measured by any algorithm.</p>
+                </div>
+
+                <div class="disclaimer-box">
+                    <h3>Important Disclaimer</h3>
+                    <p>The Love Compatibility Calculator is provided for entertainment purposes only. The results are randomly generated and should not be used to make decisions about real relationships.</p>
+                    <p>We do not claim any accuracy in our compatibility assessments, and we encourage users to focus on building genuine connections rather than relying on algorithmic results.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Image Container (for display) -->
+    <div id="share-image-container">
+        <div id="share-image">
+            <button class="close-share-image" id="close-share-image">&times;</button>
+            <h2 class="share-image-title">Love Compatibility Result</h2>
+            <p class="share-image-subtitle">Find out your compatibility at heartMatch.vercel.app</p>
+            
+            <div class="share-image-names">
+                <span id="share-name1">Your Name</span>
+                <span class="share-image-heart"><i class="fas fa-heart"></i></span>
+                <span id="share-name2">Partner's Name</span>
+            </div>
+            
+            <div class="share-image-percentage" id="share-percentage">75%</div>
+            
+            <div class="share-image-message" id="share-message">There is potential. Nurture your connection.</div>
+            
+            <p class="share-image-footer">For entertainment purposes only | heartMatch.vercel.app</p>
+            
+            <button class="download-btn" id="download-image">
+                <i class="fas fa-download"></i> Download Image
+            </button>
+        </div>
+    </div>
+
+    <!-- Hidden share image for download (no rounded corners, no download button) -->
+    <div id="share-image-download">
+        <h2 class="share-image-download-title">Love Compatibility Result</h2>
+        <p class="share-image-download-subtitle">Find out your compatibility at heartMatch.vercel.app</p>
+        
+        <div class="share-image-download-names">
+            <span id="share-download-name1">Your Name</span>
+            <span class="share-image-download-heart"><i class="fas fa-heart"></i></span>
+            <span id="share-download-name2">Partner's Name</span>
+        </div>
+        
+        <div class="share-image-download-percentage" id="share-download-percentage">75%</div>
+        
+        <div class="share-image-download-message" id="share-download-message">There is potential. Nurture your connection.</div>
+        
+        <p class="share-image-download-footer">For entertainment purposes only | heartMatch.vercel.app</p>
+    </div>
+
+    <!-- Loading indicator -->
+    <div class="loading" id="loading">
+        <i class="fas fa-spinner fa-spin"></i> Generating image...
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close-popup" id="close-popup">&times;</span>
+            <h3 class="popup-title">Try Our Other Websites</h3>
+            
+            <div class="popup-ad">
+                Adsterra Popunder Ad
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card" id="popup-pregnancy">
+                    <div class="tool-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <div class="tool-name">Pregnancy Calculator</div>
+                    <div class="tool-desc">Track your pregnancy journey</div>
+                </div>
+                <div class="tool-card" id="popup-name">
+                    <div class="tool-icon">
+                        <i class="fas fa-signature"></i>
+                    </div>
+                    <div class="tool-name">Name Meaning Tool</div>
+                    <div class="tool-desc">Discover the meaning behind names</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">Link copied to clipboard!</div>
+
+    <footer>
+        <p>© 2025 Heartmatch | For Entertainment Purposes Only | Privacy Policy | Terms of Service</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mainNav = document.getElementById('main-nav');
+
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('show');
+            });
+
+            // Page navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Update active nav link
+                    navLinks.forEach(navLink => navLink.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show selected page
+                    const pageId = this.getAttribute('data-page') + '-page';
+                    pages.forEach(page => {
+                        page.classList.remove('active');
+                        if (page.id === pageId) {
+                            page.classList.add('active');
+                        }
+                    });
+                    
+                    // Close mobile menu if open
+                    mainNav.classList.remove('show');
+                });
+            });
+
+            // Calculator functionality
+            const calculateBtn = document.getElementById('calculate-btn');
+            const name1Input = document.getElementById('name1');
+            const name2Input = document.getElementById('name2');
+            const resultSection = document.getElementById('result-section');
+            const percentageElement = document.getElementById('percentage');
+            const messageElement = document.getElementById('message');
+            const resultCircle = document.getElementById('result-circle');
+            const popup = document.getElementById('popup');
+            const closePopup = document.getElementById('close-popup');
+            const pregnancyTool = document.getElementById('pregnancy-tool');
+            const nameTool = document.getElementById('name-tool');
+            const popupPregnancy = document.getElementById('popup-pregnancy');
+            const popupName = document.getElementById('popup-name');
+            const whatsappShare = document.getElementById('whatsapp-share');
+            const facebookShare = document.getElementById('facebook-share');
+            const twitterShare = document.getElementById('twitter-share');
+            const telegramShare = document.getElementById('telegram-share');
+            const copyLink = document.getElementById('copy-link');
+            const toast = document.getElementById('toast');
+            const shareImageBtn = document.getElementById('share-image-btn');
+            const shareImageContainer = document.getElementById('share-image-container');
+            const closeShareImage = document.getElementById('close-share-image');
+            const downloadImage = document.getElementById('download-image');
+            const shareName1 = document.getElementById('share-name1');
+            const shareName2 = document.getElementById('share-name2');
+            const sharePercentage = document.getElementById('share-percentage');
+            const shareMessage = document.getElementById('share-message');
+            const shareDownloadName1 = document.getElementById('share-download-name1');
+            const shareDownloadName2 = document.getElementById('share-download-name2');
+            const shareDownloadPercentage = document.getElementById('share-download-percentage');
+            const shareDownloadMessage = document.getElementById('share-download-message');
+            const loading = document.getElementById('loading');
+
+            // Store current result for sharing
+            let currentPercentage = 0;
+            let currentMessage = '';
+
+            // Input validation - letters only
+            [name1Input, name2Input].forEach(input => {
+                input.addEventListener('input', function() {
+                    this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+                });
+            });
+
+            // Calculate compatibility
+            calculateBtn.addEventListener('click', function() {
+                const name1 = name1Input.value.trim();
+                const name2 = name2Input.value.trim();
+                
+                if (!name1 || !name2) {
+                    alert('Please enter both names');
+                    return;
+                }
+                
+                // Simple algorithm to generate consistent but "random" percentage
+                let total = 0;
+                for (let i = 0; i < name1.length; i++) {
+                    total += name1.charCodeAt(i);
+                }
+                for (let i = 0; i < name2.length; i++) {
+                    total += name2.charCodeAt(i);
+                }
+                
+                // Generate a percentage between 10-95 for more realistic results
+                currentPercentage = Math.floor((total % 86) + 10);
+                
+                displayResult(currentPercentage);
+                
+                // Show popup after a delay (only once per session)
+                if (!sessionStorage.getItem('popupShown')) {
+                    setTimeout(() => {
+                        popup.style.display = 'flex';
+                        sessionStorage.setItem('popupShown', 'true');
+                    }, 2000);
+                }
+            });
+
+            function displayResult(percentage) {
+                // Update percentage text
+                percentageElement.textContent = `${percentage}%`;
+                
+                // Update circle chart
+                const circumference = 2 * Math.PI * 15.9155;
+                const dashArray = `${(percentage / 100) * circumference}, ${circumference}`;
+                resultCircle.setAttribute('stroke-dasharray', dashArray);
+                
+                // Set message based on percentage
+                if (percentage <= 30) {
+                    currentMessage = 'Compatibility is low. Take time to understand each other.';
+                } else if (percentage <= 70) {
+                    currentMessage = 'There is potential. Nurture your connection.';
+                } else {
+                    currentMessage = 'High compatibility! Your bond is strong.';
+                    // Add spark effect for high compatibility
+                    createSparks();
+                }
+                
+                messageElement.textContent = currentMessage;
+                
+                // Show result section with animation
+                resultSection.style.display = 'block';
+                
+                // Scroll to result
+                resultSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            function createSparks() {
+                const circleChart = document.querySelector('.circle-chart');
+                for (let i = 0; i < 15; i++) {
+                    setTimeout(() => {
+                        const spark = document.createElement('div');
+                        spark.classList.add('spark');
+                        
+                        // Random position around the circle
+                        const angle = Math.random() * 2 * Math.PI;
+                        const radius = 100; // radius of the circle chart
+                        const x = radius * Math.cos(angle);
+                        const y = radius * Math.sin(angle);
+                        
+                        spark.style.left = `calc(50% + ${x}px)`;
+                        spark.style.top = `calc(50% + ${y}px)`;
+                        
+                        circleChart.appendChild(spark);
+                        
+                        // Animate the spark
+                        spark.style.animation = 'sparkle 0.8s forwards';
+                        
+                        // Remove spark after animation
+                        setTimeout(() => {
+                            spark.remove();
+                        }, 800);
+                    }, i * 100);
+                }
+            }
+
+            // Share image functionality
+            shareImageBtn.addEventListener('click', function() {
+                const name1 = name1Input.value.trim() || 'Your Name';
+                const name2 = name2Input.value.trim() || 'Partner\'s Name';
+                
+                // Update share image content
+                shareName1.textContent = name1;
+                shareName2.textContent = name2;
+                sharePercentage.textContent = `${currentPercentage}%`;
+                shareMessage.textContent = currentMessage;
+                
+                // Show the share image container
+                shareImageContainer.style.display = 'flex';
+            });
+
+            closeShareImage.addEventListener('click', function() {
+                shareImageContainer.style.display = 'none';
+            });
+
+            // Download image functionality - FIXED VERSION
+            downloadImage.addEventListener('click', function() {
+                // Show loading indicator
+                loading.style.display = 'block';
+                
+                const name1 = name1Input.value.trim() || 'YourName';
+                const name2 = name2Input.value.trim() || 'PartnerName';
+                
+                // Update the hidden download image content
+                shareDownloadName1.textContent = name1;
+                shareDownloadName2.textContent = name2;
+                shareDownloadPercentage.textContent = `${currentPercentage}%`;
+                shareDownloadMessage.textContent = currentMessage;
+                
+                // Use html2canvas to capture the hidden download image (no rounded corners, no download button)
+                html2canvas(document.getElementById('share-image-download'), {
+                    scale: 2, // Higher quality
+                    useCORS: true,
+                    logging: false,
+                    backgroundColor: null
+                }).then(function(canvas) {
+                    try {
+                        // Convert canvas to blob
+                        canvas.toBlob(function(blob) {
+                            // Create download link
+                            const url = URL.createObjectURL(blob);
+                            const link = document.createElement('a');
+                            link.download = `love-compatibility-${name1}-${name2}.png`;
+                            link.href = url;
+                            
+                            // Trigger download
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                            
+                            // Clean up
+                            URL.revokeObjectURL(url);
+                            
+                            // Hide loading indicator
+                            loading.style.display = 'none';
+                            
+                            // Show success message
+                            toast.textContent = 'Image downloaded successfully!';
+                            toast.style.display = 'block';
+                            setTimeout(() => {
+                                toast.style.display = 'none';
+                            }, 3000);
+                        }, 'image/png');
+                    } catch (error) {
+                        console.error('Error generating image:', error);
+                        loading.style.display = 'none';
+                        
+                        // Fallback method
+                        try {
+                            const image = canvas.toDataURL('image/png');
+                            const link = document.createElement('a');
+                            link.download = `love-compatibility-${name1}-${name2}.png`;
+                            link.href = image;
+                            link.click();
+                            
+                            toast.textContent = 'Image downloaded successfully!';
+                            toast.style.display = 'block';
+                            setTimeout(() => {
+                                toast.style.display = 'none';
+                            }, 3000);
+                        } catch (fallbackError) {
+                            toast.textContent = 'Error downloading image. Please try again.';
+                            toast.style.display = 'block';
+                            setTimeout(() => {
+                                toast.style.display = 'none';
+                            }, 3000);
+                        }
+                    }
+                }).catch(function(error) {
+                    console.error('Error capturing image:', error);
+                    loading.style.display = 'none';
+                    
+                    toast.textContent = 'Error generating image. Please try again.';
+                    toast.style.display = 'block';
+                    setTimeout(() => {
+                        toast.style.display = 'none';
+                    }, 3000);
+                });
+            });
+
+            // Popup functionality
+            closePopup.addEventListener('click', function() {
+                popup.style.display = 'none';
+            });
+
+            // Tool card click handlers
+            [pregnancyTool, popupPregnancy].forEach(element => {
+                element.addEventListener('click', function() {
+                    alert('Redirecting to Pregnancy Calculator...');
+                    // In a real implementation, this would redirect to the actual tool
+                });
+            });
+
+            [nameTool, popupName].forEach(element => {
+                element.addEventListener('click', function() {
+                    alert('Redirecting to Name Meaning Tool...');
+                    // In a real implementation, this would redirect to the actual tool
+                });
+            });
+
+            // Social share functionality
+            function getShareText() {
+                const name1 = name1Input.value || 'Your Name';
+                const name2 = name2Input.value || 'Partner\'s Name';
+                const percentage = percentageElement.textContent || '0%';
+                return `${name1} and ${name2} have a ${percentage} match on HeartMatch! (For entertainment only)`;
+            }
+
+            function getShareUrl() {
+                const name1 = name1Input.value || 'Your Name';
+                const name2 = name2Input.value || 'Partner\'s Name';
+                const percentage = percentageElement.textContent || '0%';
+                return encodeURIComponent(`${window.location.href}?name1=${name1}&name2=${name2}&result=${percentage}`);
+            }
+
+            whatsappShare.addEventListener('click', function() {
+                const message = getShareText();
+                const url = getShareUrl();
+                window.open(`https://wa.me/?text=${encodeURIComponent(message + ' ' + url)}`, '_blank');
+            });
+
+            facebookShare.addEventListener('click', function() {
+                const url = getShareUrl();
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+            });
+
+            twitterShare.addEventListener('click', function() {
+                const message = getShareText();
+                const url = getShareUrl();
+                window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}&url=${url}`, '_blank');
+            });
+
+            telegramShare.addEventListener('click', function() {
+                const message = getShareText();
+                const url = getShareUrl();
+                window.open(`https://t.me/share/url?url=${url}&text=${encodeURIComponent(message)}`, '_blank');
+            });
+
+            copyLink.addEventListener('click', function() {
+                const url = decodeURIComponent(getShareUrl());
+                navigator.clipboard.writeText(url).then(() => {
+                    // Show toast notification
+                    toast.textContent = 'Link copied to clipboard!';
+                    toast.style.display = 'block';
+                    setTimeout(() => {
+                        toast.style.display = 'none';
+                    }, 3000);
+                });
+            });
+
+            // Check for URL parameters to pre-fill form
+            function getUrlParams() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const name1 = urlParams.get('name1');
+                const name2 = urlParams.get('name2');
+                const result = urlParams.get('result');
+                
+                if (name1) name1Input.value = name1;
+                if (name2) name2Input.value = name2;
+                
+                if (result) {
+                    currentPercentage = parseInt(result);
+                    displayResult(currentPercentage);
+                }
+            }
+            
+            // Run on page load
+            getUrlParams();
+        });
+    </script>
+</body>
+</html>
