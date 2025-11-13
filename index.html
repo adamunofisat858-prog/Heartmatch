@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Check your relationship compatibility with our professional HeartMatch. Get meaningful insights about your connection. For entertainment purposes only.">
-    <title>HeartMatch | Professional Relationship Analysis</title>
+    <meta name="description" content="Discover your love compatibility with HeartMatch - the fun relationship analysis tool">
+    <title>HeartMatch | Love Compatibility Calculator</title>
     
     <!-- Popunder Script -->
     <script type='text/javascript' src='//domesticatednavigationgrip.com/9a/15/cc/9a15ccc7ce54e9f234360fae5f6185e6.js'></script>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <link rel="shortcut icon" href="favico.jpg" type="image/x-icon">
     <style>
         :root {
-            --deep-red: #8B0000;
-            --burgundy: #800020;
-            --light-gray: #f5f5f5;
-            --medium-gray: #e0e0e0;
-            --dark-gray: #333333;
+            --primary: #e91e63;
+            --primary-dark: #c2185b;
+            --secondary: #ff4081;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
             --white: #ffffff;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
         }
 
         * {
@@ -31,9 +33,9 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--light-gray);
-            color: var(--dark-gray);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #f8f9fa 100%);
+            color: var(--dark);
             line-height: 1.6;
             min-height: 100vh;
             display: flex;
@@ -65,14 +67,17 @@
         }
 
         .logo-icon {
-            color: var(--deep-red);
-            font-size: 1.8rem;
+            color: var(--primary);
+            font-size: 2rem;
         }
 
         .logo-text {
-            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--deep-red);
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         nav ul {
@@ -83,18 +88,18 @@
 
         nav a {
             text-decoration: none;
-            color: var(--dark-gray);
+            color: var(--dark);
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
         }
 
         nav a:hover {
-            color: var(--deep-red);
+            color: var(--primary);
         }
 
         nav a.active {
-            color: var(--deep-red);
+            color: var(--primary);
         }
 
         nav a.active::after {
@@ -104,7 +109,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background-color: var(--deep-red);
+            background-color: var(--primary);
         }
 
         .mobile-menu-btn {
@@ -112,8 +117,29 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: var(--dark-gray);
+            color: var(--dark);
             cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, rgba(233,30,99,0.05) 0%, rgba(255,64,129,0.05) 100%);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--gray);
         }
 
         /* Main Content Grid Layout */
@@ -122,7 +148,7 @@
             grid-template-columns: 160px 1fr 160px;
             gap: 20px;
             max-width: 1200px;
-            margin: 30px auto;
+            margin: 0 auto 40px;
             width: 100%;
             padding: 0 20px;
         }
@@ -138,13 +164,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
+            border-radius: var(--radius);
             overflow: hidden;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            padding: 10px;
         }
 
         .container {
             background-color: var(--white);
-            border-radius: 12px;
+            border-radius: var(--radius);
             box-shadow: var(--shadow);
             padding: 30px;
             width: 100%;
@@ -155,27 +184,34 @@
             margin-bottom: 30px;
         }
 
-        h1 {
-            color: var(--deep-red);
-            font-size: 2.5rem;
+        h2 {
+            color: var(--dark);
+            font-size: 2rem;
             margin-bottom: 10px;
-            font-weight: 700;
+            font-weight: 600;
         }
 
         .subtitle {
-            color: var(--dark-gray);
+            color: var(--gray);
             font-size: 1.1rem;
             font-weight: 300;
         }
 
         .fun-notice {
-            background-color: rgba(139, 0, 0, 0.05);
-            padding: 12px 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            background-color: rgba(233, 30, 99, 0.05);
+            padding: 15px 20px;
+            border-radius: var(--radius);
+            margin-bottom: 25px;
             text-align: center;
-            font-style: italic;
-            border-left: 4px solid var(--deep-red);
+            border-left: 4px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .fun-notice i {
+            color: var(--primary);
         }
 
         .ad-banner {
@@ -183,9 +219,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 20px 0;
-            border-radius: 8px;
+            margin: 25px 0;
+            border-radius: var(--radius);
             overflow: hidden;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            padding: 15px;
         }
 
         .input-section {
@@ -203,40 +242,42 @@
         label {
             font-weight: 500;
             margin-bottom: 8px;
-            color: var(--dark-gray);
+            color: var(--dark);
         }
 
         input {
-            padding: 12px 15px;
-            border: 1px solid var(--medium-gray);
-            border-radius: 8px;
+            padding: 14px 16px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--radius);
             font-size: 1rem;
             transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
         }
 
         input:focus {
             outline: none;
-            border-color: var(--burgundy);
-            box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.1);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
         }
 
         .btn {
-            background-color: var(--deep-red);
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: var(--white);
             border: none;
-            border-radius: 8px;
-            padding: 14px 20px;
+            border-radius: var(--radius);
+            padding: 16px 24px;
             font-size: 1.1rem;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
             margin-top: 10px;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
         }
 
         .btn:hover {
-            background-color: var(--burgundy);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(233, 30, 99, 0.4);
         }
 
         .result-section {
@@ -252,27 +293,34 @@
         }
 
         .result-title {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 20px;
-            color: var(--dark-gray);
+            color: var(--dark);
+        }
+
+        .compatibility-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
         .circle-chart {
             width: 200px;
             height: 200px;
-            margin: 0 auto 20px;
             position: relative;
         }
 
         .circle-bg {
             fill: none;
-            stroke: var(--medium-gray);
+            stroke: var(--light-gray);
             stroke-width: 3.8;
         }
 
         .circle {
             fill: none;
-            stroke: var(--deep-red);
+            stroke: url(#gradient);
             stroke-width: 3.8;
             stroke-linecap: round;
             transform: rotate(-90deg);
@@ -287,15 +335,18 @@
             transform: translate(-50%, -50%);
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--deep-red);
+            color: var(--primary);
         }
 
         .message {
             font-size: 1.2rem;
             margin: 20px 0;
-            padding: 15px;
-            border-radius: 8px;
-            background-color: rgba(139, 0, 0, 0.05);
+            padding: 20px;
+            border-radius: var(--radius);
+            background-color: rgba(233, 30, 99, 0.05);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .social-share {
@@ -317,11 +368,12 @@
             font-size: 1.2rem;
             transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .social-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         .whatsapp {
@@ -341,7 +393,7 @@
         }
 
         .copy-link {
-            background-color: var(--deep-red);
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
         }
 
         .share-text {
@@ -349,58 +401,84 @@
             text-align: center;
             margin-bottom: 15px;
             font-weight: 500;
-            color: var(--dark-gray);
+            color: var(--dark);
+        }
+
+        .download-btn {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: var(--radius);
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .download-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .other-tools {
             margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--medium-gray);
+            padding-top: 30px;
+            border-top: 1px solid var(--light-gray);
         }
 
         .tools-title {
             text-align: center;
-            margin-bottom: 20px;
-            color: var(--dark-gray);
+            margin-bottom: 25px;
+            color: var(--dark);
         }
 
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
         .tool-card {
-            background-color: var(--light-gray);
-            padding: 20px;
-            border-radius: 8px;
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: var(--radius);
             text-align: center;
             transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--light-gray);
         }
 
         .tool-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .tool-icon {
-            font-size: 2rem;
-            color: var(--deep-red);
-            margin-bottom: 10px;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
         }
 
         .tool-name {
-            font-weight: 500;
-            margin-bottom: 5px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
         }
 
         .tool-desc {
-            font-size: 0.9rem;
-            color: #666;
+            font-size: 0.95rem;
+            color: var(--gray);
         }
 
-        /* Share Image Styles */
+        /* Share Image Container (for display) */
         #share-image-container {
             position: fixed;
             top: 0;
@@ -415,7 +493,7 @@
         }
 
         #share-image {
-            background: linear-gradient(135deg, #8B0000, #800020);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 20px;
             padding: 40px;
             text-align: center;
@@ -482,30 +560,9 @@
             cursor: pointer;
         }
 
-        .download-btn {
-            background-color: white;
-            color: var(--deep-red);
-            border: none;
-            border-radius: 8px;
-            padding: 12px 25px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
         /* Hidden share image for download */
         #share-image-download {
-            background: linear-gradient(135deg, #8B0000, #800020);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             padding: 40px;
             text-align: center;
             color: white;
@@ -571,10 +628,10 @@
             margin-bottom: 30px;
         }
 
-        .about-section h2 {
-            color: var(--deep-red);
+        .about-section h3 {
+            color: var(--primary);
             margin-bottom: 15px;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
         }
 
         .about-section p {
@@ -583,76 +640,24 @@
         }
 
         .disclaimer-box {
-            background-color: rgba(139, 0, 0, 0.05);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid var(--deep-red);
+            background-color: rgba(233, 30, 99, 0.05);
+            padding: 25px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--primary);
             margin-top: 30px;
         }
 
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .popup-content {
-            background-color: var(--white);
-            border-radius: 12px;
-            padding: 30px;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: var(--shadow);
-            position: relative;
-            animation: popupFadeIn 0.3s ease;
-        }
-
-        @keyframes popupFadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .close-popup {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--dark-gray);
-        }
-
-        .popup-title {
-            margin-bottom: 20px;
-            color: var(--deep-red);
-            text-align: center;
-        }
-
-        .popup-ad {
-            width: 100%;
-            height: 250px;
-            background-color: var(--medium-gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px 0;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
         footer {
-            background-color: var(--dark-gray);
+            background-color: var(--dark);
             color: var(--white);
             text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
             margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         /* Toast notification */
@@ -661,10 +666,10 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: var(--deep-red);
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: white;
             padding: 12px 24px;
-            border-radius: 8px;
+            border-radius: var(--radius);
             box-shadow: var(--shadow);
             z-index: 1001;
             display: none;
@@ -682,8 +687,25 @@
             width: 100%;
             display: flex;
             justify-content: center;
-            border-radius: 8px;
+            border-radius: var(--radius);
             overflow: hidden;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            padding: 10px;
+        }
+
+        /* Loading indicator */
+        .loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            border-radius: var(--radius);
+            z-index: 2001;
         }
 
         /* Mobile Responsive Styles */
@@ -715,12 +737,20 @@
                 gap: 15px;
             }
 
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
             .container {
                 padding: 20px;
             }
             
-            h1 {
-                font-size: 2rem;
+            h2 {
+                font-size: 1.8rem;
             }
             
             .circle-chart {
@@ -758,7 +788,7 @@
             nav a {
                 display: block;
                 padding: 10px 0;
-                border-bottom: 1px solid var(--medium-gray);
+                border-bottom: 1px solid var(--light-gray);
             }
 
             .social-btn {
@@ -816,8 +846,8 @@
                 padding: 15px;
             }
             
-            h1 {
-                font-size: 1.8rem;
+            h2 {
+                font-size: 1.6rem;
             }
             
             .circle-chart {
@@ -905,27 +935,13 @@
         .page.active {
             display: block;
         }
-        
-        /* Loading indicator */
-        .loading {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            z-index: 2001;
-        }
     </style>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
-                <i class="fas fa-heart logo-icon"></i>
+                <i class="fas fa-heartbeat logo-icon"></i>
                 <span class="logo-text">HeartMatch</span>
             </div>
             <button class="mobile-menu-btn" id="mobile-menu-btn">
@@ -934,11 +950,16 @@
             <nav id="main-nav">
                 <ul>
                     <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
-                    <li><a href="#" class="nav-link" data-page="about">About Us</a></li>
+                    <li><a href="#" class="nav-link" data-page="about">About</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
+    <section class="hero">
+        <h1>Discover Your Love Compatibility</h1>
+        <p>Find out how well you and your partner match with our fun and easy-to-use compatibility calculator</p>
+    </section>
 
     <div class="main-wrapper">
         <!-- Left Sidebar -->
@@ -971,8 +992,8 @@
             <!-- Home Page -->
             <div class="page active" id="home-page">
                 <div class="page-title">
-                    <h1>Love Compatibility Calculator</h1>
-                    <p class="subtitle">Discover the potential of your relationship with our professional analysis tool</p>
+                    <h2>Love Compatibility Calculator</h2>
+                    <p class="subtitle">Enter your names to discover your relationship potential</p>
                 </div>
 
                 <div class="fun-notice">
@@ -1004,33 +1025,43 @@
                         <input type="text" id="name2" placeholder="Enter partner's name" maxlength="20">
                     </div>
                     
-                    <button class="btn" id="calculate-btn">Check Compatibility</button>
+                    <button class="btn" id="calculate-btn">
+                        <i class="fas fa-heart"></i> Check Compatibility
+                    </button>
                 </div>
 
                 <div class="result-section" id="result-section">
                     <h2 class="result-title">Compatibility Result</h2>
                     
-                    <div class="circle-chart">
-                        <svg viewBox="0 0 36 36">
-                            <path class="circle-bg"
-                                d="M18 2.0845
-                                a 15.9155 15.9155 0 0 1 0 31.831
-                                a 15.9155 15.9155 0 0 1 0 -31.831"
-                            />
-                            <path class="circle" id="result-circle"
-                                stroke-dasharray="0, 100"
-                                d="M18 2.0845
-                                a 15.9155 15.9155 0 0 1 0 31.831
-                                a 15.9155 15.9155 0 0 1 0 -31.831"
-                            />
-                        </svg>
-                        <div class="percentage" id="percentage">0%</div>
+                    <div class="compatibility-display">
+                        <div class="circle-chart">
+                            <svg viewBox="0 0 36 36">
+                                <defs>
+                                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#e91e63" />
+                                        <stop offset="100%" stop-color="#ff4081" />
+                                    </linearGradient>
+                                </defs>
+                                <path class="circle-bg"
+                                    d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
+                                <path class="circle" id="result-circle"
+                                    stroke-dasharray="0, 100"
+                                    d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
+                            </svg>
+                            <div class="percentage" id="percentage">0%</div>
+                        </div>
+                        
+                        <div class="message" id="message"></div>
                     </div>
                     
-                    <div class="message" id="message"></div>
-                    
                     <div class="social-share">
-                        <p class="share-text">Share your result:</p>
+                        <p class="share-text">Share your result with friends:</p>
                         <div class="social-btn whatsapp" id="whatsapp-share">
                             <i class="fab fa-whatsapp"></i>
                         </div>
@@ -1046,7 +1077,7 @@
                         <div class="social-btn copy-link" id="copy-link">
                             <i class="fas fa-link"></i>
                         </div>
-                        <button class="btn download-btn" id="share-image-btn">
+                        <button class="download-btn" id="share-image-btn">
                             <i class="fas fa-image"></i> Share as Image
                         </button>
                     </div>
@@ -1057,17 +1088,17 @@
                     <div class="tools-grid">
                         <div class="tool-card" id="pregnancy-tool">
                             <div class="tool-icon">
-                                <i class="fas fa-baby"></i>
+                                <i class="fas fa-baby-carriage"></i>
                             </div>
                             <div class="tool-name">Pregnancy Calculator</div>
-                            <div class="tool-desc">Track your pregnancy journey</div>
+                            <div class="tool-desc">Track your pregnancy journey and important milestones</div>
                         </div>
                         <div class="tool-card" id="name-tool">
                             <div class="tool-icon">
                                 <i class="fas fa-signature"></i>
                             </div>
                             <div class="tool-name">Name Meaning Tool</div>
-                            <div class="tool-desc">Discover the meaning behind names</div>
+                            <div class="tool-desc">Discover the meaning and origin behind names</div>
                         </div>
                     </div>
                 </div>
@@ -1076,32 +1107,32 @@
             <!-- About Page -->
             <div class="page" id="about-page">
                 <div class="page-title">
-                    <h1>About HeartMatch</h1>
+                    <h2>About HeartMatch</h2>
                     <p class="subtitle">Learn more about our fun compatibility tool</p>
                 </div>
 
                 <div class="about-content">
                     <div class="about-section">
-                        <h2>Our Mission</h2>
-                        <p>Welcome to the Love Compatibility Calculator, a fun and entertaining tool designed to bring a smile to your face and spark conversations about relationships.</p>
+                        <h3>Our Mission</h3>
+                        <p>Welcome to HeartMatch, a fun and entertaining tool designed to bring a smile to your face and spark conversations about relationships.</p>
                         <p>Our mission is to provide lighthearted entertainment while reminding users that real relationships are built on communication, trust, and mutual respect - not algorithmic calculations.</p>
                     </div>
 
                     <div class="about-section">
-                        <h2>How It Works</h2>
-                        <p>Our HeartMatch uses a playful algorithm that generates compatibility percentages based on the names you enter. The results are randomly generated within certain ranges to create entertaining outcomes.</p>
+                        <h3>How It Works</h3>
+                        <p>HeartMatch uses a playful algorithm that generates compatibility percentages based on the names you enter. The results are randomly generated within certain ranges to create entertaining outcomes.</p>
                         <p>While we've designed the tool to feel authentic with smooth animations and professional presentation, please remember that these results are purely for entertainment and should not be taken seriously.</p>
                     </div>
 
                     <div class="about-section">
-                        <h2>For Entertainment Only</h2>
-                        <p>We believe in being transparent about the nature of our tool. The HeartMatch is designed for amusement and social sharing, not as a serious relationship assessment.</p>
+                        <h3>For Entertainment Only</h3>
+                        <p>We believe in being transparent about the nature of our tool. HeartMatch is designed for amusement and social sharing, not as a serious relationship assessment.</p>
                         <p>True compatibility comes from shared values, effective communication, and emotional connection - things that can't be measured by any algorithm.</p>
                     </div>
 
                     <div class="disclaimer-box">
                         <h3>Important Disclaimer</h3>
-                        <p>The Love Compatibility Calculator is provided for entertainment purposes only. The results are randomly generated and should not be used to make decisions about real relationships.</p>
+                        <p>The HeartMatch Compatibility Calculator is provided for entertainment purposes only. The results are randomly generated and should not be used to make decisions about real relationships.</p>
                         <p>We do not claim any accuracy in our compatibility assessments, and we encourage users to focus on building genuine connections rather than relying on algorithmic results.</p>
                     </div>
                 </div>
@@ -1135,7 +1166,7 @@
         <div id="share-image">
             <button class="close-share-image" id="close-share-image">&times;</button>
             <h2 class="share-image-title">Love Compatibility Result</h2>
-            <p class="share-image-subtitle">Find out your compatibility at heartMatch.vercel.app</p>
+            <p class="share-image-subtitle">Find out your compatibility at HeartMatch</p>
             
             <div class="share-image-names">
                 <span id="share-name1">Your Name</span>
@@ -1147,7 +1178,7 @@
             
             <div class="share-image-message" id="share-message">There is potential. Nurture your connection.</div>
             
-            <p class="share-image-footer">For entertainment purposes only | heartMatch.vercel.app</p>
+            <p class="share-image-footer">For entertainment purposes only | HeartMatch</p>
             
             <button class="download-btn" id="download-image">
                 <i class="fas fa-download"></i> Download Image
@@ -1158,7 +1189,7 @@
     <!-- Hidden share image for download -->
     <div id="share-image-download">
         <h2 class="share-image-download-title">Love Compatibility Result</h2>
-        <p class="share-image-download-subtitle">Find out your compatibility at heartMatch.vercel.app</p>
+        <p class="share-image-download-subtitle">Find out your compatibility at HeartMatch</p>
         
         <div class="share-image-download-names">
             <span id="share-download-name1">Your Name</span>
@@ -1170,7 +1201,7 @@
         
         <div class="share-image-download-message" id="share-download-message">There is potential. Nurture your connection.</div>
         
-        <p class="share-image-download-footer">For entertainment purposes only | heartMatch.vercel.app</p>
+        <p class="share-image-download-footer">For entertainment purposes only | HeartMatch</p>
     </div>
 
     <!-- Loading indicator -->
@@ -1178,39 +1209,13 @@
         <i class="fas fa-spinner fa-spin"></i> Generating image...
     </div>
 
-    <div class="popup" id="popup">
-        <div class="popup-content">
-            <span class="close-popup" id="close-popup">&times;</span>
-            <h3 class="popup-title">Try Our Other Websites</h3>
-            
-            <div class="popup-ad">
-                Adsterra Popunder Ad
-            </div>
-            
-            <div class="tools-grid">
-                <div class="tool-card" id="popup-pregnancy">
-                    <div class="tool-icon">
-                        <i class="fas fa-baby"></i>
-                    </div>
-                    <div class="tool-name">Pregnancy Calculator</div>
-                    <div class="tool-desc">Track your pregnancy journey</div>
-                </div>
-                <div class="tool-card" id="popup-name">
-                    <div class="tool-icon">
-                        <i class="fas fa-signature"></i>
-                    </div>
-                    <div class="tool-name">Name Meaning Tool</div>
-                    <div class="tool-desc">Discover the meaning behind names</div>
-                </div>
-            </div>
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 HeartMatch | For Entertainment Purposes Only | Privacy Policy | Terms of Service</p>
         </div>
-    </div>
+    </footer>
 
     <div class="toast" id="toast">Link copied to clipboard!</div>
-
-    <footer>
-        <p>© 2025 Heartmatch | For Entertainment Purposes Only | Privacy Policy | Terms of Service</p>
-    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1256,12 +1261,8 @@
             const percentageElement = document.getElementById('percentage');
             const messageElement = document.getElementById('message');
             const resultCircle = document.getElementById('result-circle');
-            const popup = document.getElementById('popup');
-            const closePopup = document.getElementById('close-popup');
             const pregnancyTool = document.getElementById('pregnancy-tool');
             const nameTool = document.getElementById('name-tool');
-            const popupPregnancy = document.getElementById('popup-pregnancy');
-            const popupName = document.getElementById('popup-name');
             const whatsappShare = document.getElementById('whatsapp-share');
             const facebookShare = document.getElementById('facebook-share');
             const twitterShare = document.getElementById('twitter-share');
@@ -1316,14 +1317,6 @@
                 currentPercentage = Math.floor((total % 86) + 10);
                 
                 displayResult(currentPercentage);
-                
-                // Show popup after a delay (only once per session)
-                if (!sessionStorage.getItem('popupShown')) {
-                    setTimeout(() => {
-                        popup.style.display = 'flex';
-                        sessionStorage.setItem('popupShown', 'true');
-                    }, 2000);
-                }
             });
 
             function displayResult(percentage) {
@@ -1337,11 +1330,11 @@
                 
                 // Set message based on percentage
                 if (percentage <= 30) {
-                    currentMessage = 'Compatibility is low. Take time to understand each other.';
+                    currentMessage = 'Compatibility is low. Take time to understand each other better.';
                 } else if (percentage <= 70) {
-                    currentMessage = 'There is potential. Nurture your connection.';
+                    currentMessage = 'There is potential. Nurture your connection and communicate openly.';
                 } else {
-                    currentMessage = 'High compatibility! Your bond is strong.';
+                    currentMessage = 'High compatibility! Your bond is strong and full of potential.';
                     // Add spark effect for high compatibility
                     createSparks();
                 }
@@ -1488,24 +1481,13 @@
                 });
             });
 
-            // Popup functionality
-            closePopup.addEventListener('click', function() {
-                popup.style.display = 'none';
-            });
-
             // Tool card click handlers
-            [pregnancyTool, popupPregnancy].forEach(element => {
-                element.addEventListener('click', function() {
-                    alert('Redirecting to Pregnancy Calculator...');
-                    // In a real implementation, this would redirect to the actual tool
-                });
+            pregnancyTool.addEventListener('click', function() {
+                alert('Pregnancy Calculator coming soon!');
             });
 
-            [nameTool, popupName].forEach(element => {
-                element.addEventListener('click', function() {
-                    alert('Redirecting to Name Meaning Tool...');
-                    // In a real implementation, this would redirect to the actual tool
-                });
+            nameTool.addEventListener('click', function() {
+                alert('Name Meaning Tool coming soon!');
             });
 
             // Social share functionality
