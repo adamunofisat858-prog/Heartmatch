@@ -6,9 +6,8 @@
     <meta name="description" content="Check your relationship compatibility with our professional HeartMatch. Get meaningful insights about your connection. For entertainment purposes only.">
     <title>HeartMatch | Professional Relationship Analysis</title>
     
-    <!-- Popunder  -->
+    <!-- Popunder Script -->
     <script type='text/javascript' src='//domesticatednavigationgrip.com/9a/15/cc/9a15ccc7ce54e9f234360fae5f6185e6.js'></script>
-    <!-- Popunder end  -->
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -117,29 +116,21 @@
             cursor: pointer;
         }
 
-        /* Main Content */
+        /* Main Content Grid Layout */
         .main-wrapper {
-            display: flex;
+            display: grid;
+            grid-template-columns: 160px 1fr 160px;
+            gap: 20px;
             max-width: 1200px;
             margin: 30px auto;
-            gap: 20px;
             width: 100%;
             padding: 0 20px;
         }
 
         .ad-sidebar {
-            width: 160px;
             display: flex;
             flex-direction: column;
             gap: 20px;
-        }
-
-        .ad-sidebar-left {
-            order: -1;
-        }
-
-        .ad-sidebar-right {
-            order: 2;
         }
 
         .ad-banner-sidebar {
@@ -152,14 +143,11 @@
         }
 
         .container {
-            max-width: 800px;
-            width: 100%;
             background-color: var(--white);
             border-radius: 12px;
             box-shadow: var(--shadow);
             padding: 30px;
-            flex-grow: 1;
-            margin: 0;
+            width: 100%;
         }
 
         .page-title {
@@ -515,7 +503,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        /* Hidden share image for download (no rounded corners, no download button) */
+        /* Hidden share image for download */
         #share-image-download {
             background: linear-gradient(135deg, #8B0000, #800020);
             padding: 40px;
@@ -689,36 +677,31 @@
         }
 
         /* Social Bar Styles */
-        .social-bar-left, .social-bar-right {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 99;
+        .social-bar {
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
-        .social-bar-left {
-            left: 10px;
-        }
-
-        .social-bar-right {
-            right: 10px;
-        }
-
+        /* Mobile Responsive Styles */
         @media (max-width: 1024px) {
-            .ad-sidebar {
-                display: none;
-            }
-            
             .main-wrapper {
-                flex-direction: column;
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
             
-            .container {
-                margin: 0 auto;
+            .ad-sidebar {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
             }
-
-            .social-bar-left, .social-bar-right {
-                display: none;
+            
+            .ad-banner-sidebar {
+                width: 48%;
             }
         }
 
@@ -734,7 +717,6 @@
 
             .container {
                 padding: 20px;
-                margin: 20px;
             }
             
             h1 {
@@ -832,7 +814,6 @@
         @media (max-width: 480px) {
             .container {
                 padding: 15px;
-                margin: 10px;
             }
             
             h1 {
@@ -901,22 +882,6 @@
             }
         }
 
-        @media (max-width: 360px) {
-            .container {
-                padding: 10px;
-                margin: 5px;
-            }
-            
-            h1 {
-                font-size: 1.6rem;
-            }
-            
-            .social-btn {
-                width: 38px;
-                height: 38px;
-            }
-        }
-
         .spark {
             position: absolute;
             width: 10px;
@@ -976,8 +941,8 @@
     </header>
 
     <div class="main-wrapper">
-        <!-- Left Sidebar Ad -->
-        <div class="ad-sidebar ad-sidebar-left">
+        <!-- Left Sidebar -->
+        <div class="ad-sidebar">
             <div class="ad-banner-sidebar">
                 <!-- Banner 160×300 -->
                 <script type="text/javascript">
@@ -990,6 +955,10 @@
                     };
                 </script>
                 <script type="text/javascript" src="//domesticatednavigationgrip.com/d5ab461e1c64a334d00c11dd19bfa545/invoke.js"></script>
+            </div>
+            <div class="social-bar">
+                <!-- Social Bar -->
+                <script type='text/javascript' src='//domesticatednavigationgrip.com/60/20/37/602037c8d0b5096a3da43f4de6d99fa1.js'></script>
             </div>
         </div>
 
@@ -1139,8 +1108,8 @@
             </div>
         </div>
 
-        <!-- Right Sidebar Ad -->
-        <div class="ad-sidebar ad-sidebar-right">
+        <!-- Right Sidebar -->
+        <div class="ad-sidebar">
             <div class="ad-banner-sidebar">
                 <!-- Banner 160×300 -->
                 <script type="text/javascript">
@@ -1153,6 +1122,10 @@
                     };
                 </script>
                 <script type="text/javascript" src="//domesticatednavigationgrip.com/d5ab461e1c64a334d00c11dd19bfa545/invoke.js"></script>
+            </div>
+            <div class="social-bar">
+                <!-- Social Bar -->
+                <script type='text/javascript' src='//domesticatednavigationgrip.com/60/20/37/602037c8d0b5096a3da43f4de6d99fa1.js'></script>
             </div>
         </div>
     </div>
@@ -1182,7 +1155,7 @@
         </div>
     </div>
 
-    <!-- Hidden share image for download (no rounded corners, no download button) -->
+    <!-- Hidden share image for download -->
     <div id="share-image-download">
         <h2 class="share-image-download-title">Love Compatibility Result</h2>
         <p class="share-image-download-subtitle">Find out your compatibility at heartMatch.vercel.app</p>
@@ -1234,14 +1207,6 @@
     </div>
 
     <div class="toast" id="toast">Link copied to clipboard!</div>
-
-    <!-- Social Bar Ads -->
-    <div class="social-bar-left">
-        <script type='text/javascript' src='//domesticatednavigationgrip.com/60/20/37/602037c8d0b5096a3da43f4de6d99fa1.js'></script>
-    </div>
-    <div class="social-bar-right">
-        <script type='text/javascript' src='//domesticatednavigationgrip.com/60/20/37/602037c8d0b5096a3da43f4de6d99fa1.js'></script>
-    </div>
 
     <footer>
         <p>© 2025 Heartmatch | For Entertainment Purposes Only | Privacy Policy | Terms of Service</p>
@@ -1438,7 +1403,7 @@
                 shareImageContainer.style.display = 'none';
             });
 
-            // Download image functionality - FIXED VERSION
+            // Download image functionality
             downloadImage.addEventListener('click', function() {
                 // Show loading indicator
                 loading.style.display = 'block';
@@ -1452,7 +1417,7 @@
                 shareDownloadPercentage.textContent = `${currentPercentage}%`;
                 shareDownloadMessage.textContent = currentMessage;
                 
-                // Use html2canvas to capture the hidden download image (no rounded corners, no download button)
+                // Use html2canvas to capture the hidden download image
                 html2canvas(document.getElementById('share-image-download'), {
                     scale: 2, // Higher quality
                     useCORS: true,
